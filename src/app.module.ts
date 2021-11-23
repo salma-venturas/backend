@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 import { HomeDetail } from './home-detail/entities/home-detail.entity';
 import { HomeDetailModule } from './home-detail/home-detail.module';
 
@@ -17,7 +19,7 @@ import { HomeDetailModule } from './home-detail/home-detail.module';
       synchronize: true,
     }),
   ],
-  controllers: [],
-  providers: [],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
